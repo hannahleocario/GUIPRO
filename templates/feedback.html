@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Feedback Form</h2>
+{% if success %}
+    <p>Thank you for your feedback, {{ name }}!</p>
+{% else %}
+<form method="POST">
+    <input type="text" name="name" placeholder="Your name" required><br>
+    <input type="email" name="email" placeholder="Your email" required><br>
+    <textarea name="message" placeholder="Your message" required></textarea><br>
+    <button type="submit">Submit</button>
+</form>
+{% endif %}
+{% endblock %}
